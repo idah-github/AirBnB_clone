@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
             if instance_key in all_instances:
                 print(all_instances[instance_key])
             else:
-                print("** no instance found **"")
+                print("** no instance found **")
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

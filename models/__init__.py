@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """init method for models module"""
 
-from models.engine.file.storage import FileStorage
+from models.engine.file_storage import FileStorage
 
 
 storage = FileStorage()
