@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" Import necessary models """
+""" The Hbnb cmd interpreter; entry point """
 
 
 import cmd
