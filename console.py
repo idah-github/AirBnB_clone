@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         print("")
         return True
 
-    def do_crete(self,args):
+    def do_create(self,args):
         """
         Method creating BaseModel new instance and prints its ID.
 
@@ -68,26 +68,26 @@ class HBNBCommand(cmd.Cmd):
             models.storage.save()
             print(obj.id)
 
-        def do_show(self, args):
-            """Display str rep of class inst of an id"""
+    def do_show(self, args):
+        """Display str rep of class inst of an id"""
 
-            if not args:
-                print ("**class name missing **")
+        if not args:
+            print ("** class name missing **")
 
             arg_list = args.split()
-            if arg_list[0] not in self.__classes:
-                print("** class doesn't exist **")
+        if arg_list[0] not in self.__classes:
+            print("** class doesn't exist **")
 
-            elif len(arg_list) < 2:
-                print ("** instance id missing **")
+        elif len(arg_list) < 2:
+            print ("** instance id missing **")
 
+        else:
+            instance_key = "{}.{}".format(arg_list[0], arg_list[1])
+            all_instances = storage.all()
+
+            if instance_key in all_instances:
+                print(all_instances[instance_key])
             else:
-                instance_key = "{}.{}".format(arg_list[0], arg_list[1])
-                all_instances = storage.all()
-
-                if instance_key in all_instances:
-                    print(all_instances[instance_key])
-                else:
-                    print("** no instances found **"")
+                print("** no instance found **"")
 
 
