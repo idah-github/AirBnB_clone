@@ -49,4 +49,4 @@ class FileStorage:
                     self.new(eval(clas_name)(**objs))
         except FileNotFoundError:
         #except Exception:
-        return
+            return
