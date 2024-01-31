@@ -63,8 +63,8 @@ class HBNBCommand(cmd.Cmd):
 
         else:
             obj = eval(args)
-            storage.new(obj)
-            storage.save()
+            #storage.new(obj)
+            obj.save()
             print(obj.id)
 
     def do_show(self, args):
