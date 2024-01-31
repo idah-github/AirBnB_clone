@@ -54,11 +54,8 @@ Parent Class init
         Method returns a dictionary containing all 
         keys/values of __dict__ instance
         """
-        map_objects = {}
-        for key, value in self.__dict__.items():
-            if key == "created_at" or key == "updated_at":
-                map_objects[key] = value.isoformat()
-            else:
-                map_objects[key] = value
-        map_objects["__class__"] = self.__class__.__name__
-        return map_objects
+        map_obj = self.__dict__.copy()
+        map_obj['__class__'] = self.__class__.__name__
+        map_obj['created_at'] = self.created_at.isoformat()
+        map_obj['updated_at'] = self.updated_at.isoformat()
+        return map_obj
