@@ -33,9 +33,7 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def handle_empty(args):
-        """
-        Handle empty line
-        """
+        """Handle empty line."""
 
         pass
 
@@ -64,8 +62,9 @@ class HBNBCommand(cmd.Cmd):
             print("**class does nit exist **")
 
         else:
-            obj = self.classes[args]()
-            models.storage.save()
+            obj = eval(args)
+            storage.new(obj)
+            storage.save()
             print(obj.id)
 
     def do_show(self, args):
