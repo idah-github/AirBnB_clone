@@ -75,7 +75,7 @@ class TestConsole(unittest.TestCase):
             self.typing.onecmd("all Place")
             self.assertEqual("[]\n", f.getvalue())
 
-   """ def test_destroy(self):
+    def test_destroy(self):
         """Test cmd output: destroy"""
         with patch('sys.stdout', new=StringIO()) as f:
             self.typing.onecmd("destroy")
@@ -119,7 +119,7 @@ class TestConsole(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as f:
             self.typing.onecmd("update User 12345")
             self.assertEqual("** no instance found **\n",
-                             f.getvalue()) """
+                             f.getvalue())
 
     def test_show(self):
         """Test cmd output: show"""
